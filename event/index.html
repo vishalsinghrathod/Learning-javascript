@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+
+    <style>
+        img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="img1"
+                    src="https://images.pexels.com/photos/18681382/pexels-photo-18681382/free-photo-of-coding.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="" srcset=""></li>
+            <li><img width="200px" id="img2"
+                    src="https://images.pexels.com/photos/3532555/pexels-photo-3532555.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="" srcset=""></li>
+            <li><img width="200px" id="img3"
+                    src="https://images.pexels.com/photos/1261427/pexels-photo-1261427.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="" srcset=""></li>
+            <li><img width="200px" id="img4"
+                    src="https://images.pexels.com/photos/998713/pexels-photo-998713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" srcset=""></li>
+            <li><img width="200px" id="img5"
+                    src="https://images.pexels.com/photos/693859/pexels-photo-693859.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="" srcset=""></li>
+            <li><a style="color: aqua;" href="https://google.com" id="google">google</a></li>
+        </ul>
+        <button>click Me</button>
+    </div>
+    <script>
+        // document.getElementById('img4').onclick = function(){
+        //     alert('img4 clicked')
+        // }
+
+        // const img = document.getElementById('img4')
+
+        // img.addEventListener("click", function(e){
+        //     // alert('img4 clicked')
+
+        // })
+
+        // const btn = document.querySelector('button')
+        // btn.addEventListener("click", function(e){
+        // //   console.log(e.target);
+        // //   console.log(e.type);
+        // //   console.log(e.currentTarget);
+        // //   console.log(e.bubbles);
+        // //   console.log(e.timeStamp);
+
+        // })
+
+        // const image = document.getElementById('images')
+        // image.addEventListener("click", function(e){
+        //     console.log("clicked inside the ul");  
+        // })
+
+        // const img4 = document.getElementById('img4')
+        // img4.addEventListener("click", function(e){
+        //     console.log("clicked on img4");
+        //     e.stopPropagation() 
+        // })
+
+        // const google = document.getElementById('google')
+        // google.addEventListener("click", (e) =>{
+        //  console.log("google clicked");
+        //  e.preventDefault();
+        //  e.stopPropagation()
+
+        // })
+
+        const img = document.querySelector('#images')
+        img.addEventListener("click", function (e) {
+            // console.log(e.target.tagName)
+            if (e.target.tagName === 'IMG') {
+
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+
+        }, false)
+
+    </script>
+
+</body>
+
+</html>
